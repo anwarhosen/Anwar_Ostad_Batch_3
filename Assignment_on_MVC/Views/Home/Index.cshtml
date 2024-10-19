@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Assignment_on_MVC.Models.Student>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-success">Student Roster with Corresponding Courses and Instructors</h2>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course Name</th>
+                    <th>Teacher Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@student.StudentName</td>
+                        <td>@student.Course.CourseName</td>
+                        <td>@student.Course.Teacher.TeacherName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
